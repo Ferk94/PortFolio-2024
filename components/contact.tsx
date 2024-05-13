@@ -29,7 +29,7 @@ export default function Contact() {
         once: true,
       }}
     >
-      <SectionHeading>Contact me</SectionHeading>
+      <SectionHeading>Contactáme</SectionHeading>
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
         Por favor, contácteme directamente a{" "}

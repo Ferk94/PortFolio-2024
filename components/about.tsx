@@ -16,7 +16,7 @@ export default function AcercaDe() {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <SectionHeading>Acerca de mí</SectionHeading>
+      <SectionHeading>Acerca de</SectionHeading>
       <p className="mb-3">
         En el año 2021{" "}
         decidí seguir mi
