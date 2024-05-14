@@ -33,15 +33,15 @@ export default function Intro() {
             <Image
               src="/images/img-kaganovicz.jpeg"
               alt="Fernando Kaganovicz"
-              width="192"
-              height="192"
+              width="252"
+              height="252"
               quality="95"
               priority={true}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              className="h-25 w-25 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
           </motion.div>
 
-          <motion.span
+          {/* <motion.span
             className="absolute bottom-0 right-0 text-4xl"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -53,7 +53,7 @@ export default function Intro() {
             }}
           >
             👋
-          </motion.span>
+          </motion.span> */}
         </div>
       </div>
 
@@ -62,7 +62,7 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hola, soy Fernando.</span> Soy{" "}
+        <span className="font-bold">Hola👋, soy Fernando.</span> Soy{" "}
         <span className="font-bold">full-stack developer</span> con{" "}
         <span className="font-bold">3 años</span> de experiencia. Mis especialidades son  <span className="underline">Node.js</span>. y{" "}
         <span className="underline">React (Next.js)</span>.
