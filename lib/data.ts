@@ -38,7 +38,7 @@ export const experiencesData = [
     title: "Desarrollador full stack web/móbil en Aythen",
     location: "Barcelona, España",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      'Lideré el apartado "Editor" durante 10 meses de la web Aythen, que consistía en replicar las funcionalidades de Figma con algunas características propias. Trabajé tanto en optimizaciones de backend como manipulando el dom en front, entre muchas otras tareas.',
     icon: React.createElement(FaReact),
     date: "07-2023 - presente",
   },
