@@ -30,14 +30,15 @@ export default function AcercaDe() {
           React, Next.js, Node.js, Sequelize y PostgreSql
         </span>
         . También estoy familiarizado con TypeScript, NestJs, ExpressJs, typeOrm. Siempre estoy
-        buscando aprender nuevas tecnologías. Actualmente estoy buscando una{" "}
+        buscando aprender nuevas tecnologías, por ejemplo, ahora estoy aprendiendo Astro.
+        Actualmente estoy buscando una{" "}
         <span className="font-medium">posición de tiempo completo</span> como
         desarrollador de software.
       </p>
 
       <p>
         <span className="italic">Cuando no estoy programando</span>, disfruto
-        jugando videojuegos, viendo películas y jugando con mi perro. También
+        jugando videojuegos También
         disfruto{" "}
         <span className="font-medium">aprender cosas nuevas</span>. Actualmente
         estoy aprendiendo sobre{" "}

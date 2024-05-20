@@ -46,7 +46,7 @@ export const experiencesData = [
     title: "Desarrollo Full Stack independiente",
     location: "Buenos Aires, Argentina",
     description:
-      "Trabajé aproximadamente 2 años como desarrollador independiente donde destaco dos grandes proyectos que finalicé, QBook y Hollywood.",
+      "Trabajé aproximadamente 2 años como desarrollador independiente donde destaco dos proyecto, QBook y Hollywood SP.",
     icon: React.createElement(CgWorkAlt),
     date: "2021 - 2023",
   },
@@ -62,25 +62,49 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Hollywood SP",
+    date: "08-2022/12-2022",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "Desarrollé una REST API integral utilizando Firebase, y participé en la construcción del cliente para una innovadora aplicación web orientada a discotecas.",
+    tags: ["Node.js", "Express", "Firebase", "React",  "Redux", "Tailwind"],
     imageUrl: corpcommentImg,
+    videoUrl: null,
+    linkUrl: null,
+    index: 0
   },
   {
-    title: "rmtDev",
+    title: "Qbook",
+    date: "04-2022/07-2022",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      "Desarrollé una REST API y participé notoriamente en la construcción y conexión del cliente para importante aplicación web de viaje de egresados.",
+    tags: ["React", "TypeScript", "Next", "Node", "Express", "PostgreSQL"],
     imageUrl: rmtdevImg,
+    videoUrl: "https://youtu.be/9b3nJn8gZAc",
+    linkUrl: "http://www.qbook.digital",
+    index: 1
   },
+  {
+    title: "TECHO hiring",
+    date: "08-2021/10-2021",
+    description:
+      "Proyecto cuyo desafío consistía en continuar un Proyecto con código heredado hecho 100% con TypeScript fullstack para ONG TECHO.",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux", "Node.js", "Express", "Sequelize", "PostgreSQL"],
+    imageUrl: rmtdevImg,
+    videoUrl: "https://youtu.be/GMjGTJrUBJo",
+    linkUrl: null,
+    index: 2
+  },
+  
   {
     title: "Food Project",
+    date: "08-2021",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+      "Es un recetario que consume la api de spoonacular. Podes filtrar y buscar la receta q más te guste y acceder a todos sus detalles, y guardar recetas propias en la página.",
+    tags: ["React", "Node.js", "Express", "PostgreSQL", "Redux", "CSS Modules"],
     imageUrl: wordanalyticsImg,
+    videoUrl: null,
+    linkUrl: null,
+    index: 3
   },
 ] as const;
 
@@ -102,5 +126,6 @@ export const skillsData = [
   "PostgreSQL",
   "MySql",
   "MongoDB",
+  "Firebase",
   "Framer Motion",
 ] as const;

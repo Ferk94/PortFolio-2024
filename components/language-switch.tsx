@@ -8,8 +8,6 @@ import { BsGlobe, BsGlobe2 } from "react-icons/bs";
 export default function LanguageSwitch() {
   const { language, toggleLanguage } = useLanguage();
 
-  console.log(language, 'deberia decir es harcodeado')
-
   const onHover = () => {
     const button = document.getElementById(`button-${language}`)
     const newNode = document.createElement('div')
