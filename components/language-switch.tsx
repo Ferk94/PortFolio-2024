@@ -41,6 +41,8 @@ export default function LanguageSwitch() {
      
   }
 
+  // falta lógica para que funcione correctamente.
+
   return (
     <button
       id={`button-${language}`}
