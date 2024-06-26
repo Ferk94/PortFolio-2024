@@ -7,6 +7,8 @@ import { useSectionInView } from "@/lib/hooks";
 export default function AcercaDe() {
   const { ref } = useSectionInView("Acerca de");
 
+  // rellenar aquí
+
   return (
     <motion.section
       ref={ref}
