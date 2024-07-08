@@ -26,12 +26,12 @@ export default function AcercaDe() {
         y aprendí desarrollo web <span className="font-medium">full-stack</span>
         . <span className="italic">Mi parte favorita de programar</span> es el
         aspecto de resolución de problemas. Me <span className="underline">encanta</span> la
-        sensación de finalmente encontrar una solución al problema que se presenta. Mi stack
+        sensación de encontrar una solución al problema que se presenta. Mi stack
         principal es{" "}
         <span className="font-medium">
-          React, Next.js, Node.js, Sequelize y PostgreSql
+          React, Next.js, Node.js, Sequelize, Express y PostgreSql
         </span>
-        . También estoy familiarizado con TypeScript, NestJs, ExpressJs, typeOrm. Siempre estoy
+        . También estoy familiarizado con TypeScript, NestJs, typeOrm y MongoDB. Siempre estoy
         buscando aprender nuevas tecnologías, por ejemplo, ahora estoy aprendiendo Astro.
         Actualmente estoy buscando una{" "}
         <span className="font-medium">posición de tiempo completo</span> como
