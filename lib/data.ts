@@ -62,6 +62,17 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+  title: "Portfolio Profesor & Artista",
+  date: "11-05-2025 / 18-05-2025",
+  description:
+    "Desarrollé una SPA con Next.js para presentar el perfil profesional y artístico de un baterista, con navegación dinámica, diseño responsivo y secciones interactivas.",
+  tags: ["Next.js", "TypeScript", "CSS Modules", "SPA", "Responsive Design", "Framer Motion"],
+  imageUrl: corpcommentImg,
+  videoUrl: null,
+  linkUrl: 'https://portfolio-juanma-brown.vercel.app/',
+  index: 0
+  },
+  {
     title: "Hollywood SP",
     date: "08-2022/12-2022",
     description:

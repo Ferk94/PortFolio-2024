@@ -64,7 +64,7 @@ export default function Intro() {
       >
         <span className="font-bold">Hola👋, soy Fernando.</span> Soy{" "}
         <span className="font-bold">full-stack developer</span> con{" "}
-        <span className="font-bold">3 años</span> de experiencia. Mis especialidades son  <span className="underline">Node.js</span>. y{" "}
+        <span className="font-bold">4 años</span> de experiencia. Mis especialidades son  <span className="underline">Node.js</span>. y{" "}
         <span className="underline">React (Next.js)</span>.
       </motion.h1>
 
