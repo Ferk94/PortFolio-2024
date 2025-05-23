@@ -35,12 +35,20 @@ export const links = [
 
 export const experiencesData = [
   {
+    title: "Desarrollador de WordPress en One Page Agency",
+    location: "Tucumán, Argentina",
+    description:
+      'Desarrollé sitios en Wordpress con Divi y Elementor. Me encargaba de atender a clientes para definir requerimientos y realizar entregas. Capacitación a clientes para la autogestión de sus sitios en WordPress. Tareas de DevOps, incluyendo mantenimiento de servidores y despliegue de aplicaciones.',
+    icon: React.createElement(FaReact),
+    date: "07-2024 - 02-2025",
+  },
+  {
     title: "Desarrollador full stack web/móbil en Aythen",
     location: "Barcelona, España",
     description:
-      'Lideré el apartado "Editor" durante 10 meses de la web Aythen, que consistía en replicar las funcionalidades de Figma con algunas características propias. Trabajé tanto en optimizaciones de backend como manipulando el dom en front, entre muchas otras tareas.',
+      'Lideré el apartado "Editor" durante 18 meses de la web Aythen, que consistía en replicar las funcionalidades de Figma con algunas características propias. Trabajé tanto en optimizaciones de backend como manipulando el dom en front, entre muchas otras tareas.',
     icon: React.createElement(FaReact),
-    date: "07-2023 - presente",
+    date: "07-2023 - 02-2025",
   },
   {
     title: "Desarrollo Full Stack independiente",
