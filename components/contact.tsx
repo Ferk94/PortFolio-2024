@@ -7,12 +7,13 @@ import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
-import { useTranslation } from "react-i18next"; // importo hook para traducción
-
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
   const { ref } = useSectionInView("contact");
-  const { t } = useTranslation(); // hook para traducción
+  const { t } = useTranslation();
+
+  const [isSending, setIsSending] = React.useState(false);
 
   return (
     <MotionSection
@@ -35,13 +36,17 @@ export default function Contact() {
       <SectionHeading>{t("contactTitle")}</SectionHeading>
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
-        {t("contactText")}{" "}      
+        {t("contactText")}
       </p>
 
       <form
         className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
+          setIsSending(true);
+
           const { data, error } = await sendEmail(formData);
+
+          setIsSending(false);
 
           if (error) {
             toast.error(error);
@@ -59,6 +64,7 @@ export default function Contact() {
           maxLength={500}
           placeholder="Your email"
         />
+
         <textarea
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="message"
@@ -66,7 +72,8 @@ export default function Contact() {
           required
           maxLength={5000}
         />
-        <SubmitBtn />
+
+        <SubmitBtn isSending={isSending} />
       </form>
     </MotionSection>
   );
