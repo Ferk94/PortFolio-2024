@@ -9,9 +9,13 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { useTranslation } from "react-i18next"; // importo hook para traducción
 
 export default function Intro() {
-  const { ref } = useSectionInView("Inicio", 0.5);
+  const { t } = useTranslation(); // hook para traducción
+
+  const { ref } = useSectionInView('home', 0.5); // si usas esta palabra para sección
+
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
@@ -33,27 +37,13 @@ export default function Intro() {
             <Image
               src="/images/img-kaganovicz.jpeg"
               alt="Fernando Kaganovicz"
-              width="252"
-              height="252"
-              quality="95"
+              width={252}
+              height={252}
+              quality={95}
               priority={true}
               className="h-25 w-25 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
           </motion.div>
-
-          {/* <motion.span
-            className="absolute bottom-0 right-0 text-4xl"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 125,
-              delay: 0.1,
-              duration: 0.7,
-            }}
-          >
-            👋
-          </motion.span> */}
         </div>
       </div>
 
@@ -62,10 +52,8 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hola👋, soy Fernando.</span> Soy{" "}
-        <span className="font-bold">full-stack developer</span> con{" "}
-        <span className="font-bold">4 años</span> de experiencia. Mis especialidades son  <span className="underline">Node.js</span>. y{" "}
-        <span className="underline">React (Next.js)</span>.
+        <span className="font-bold">{t('introGreeting', { name: 'Fernando' })}</span>{" "}
+        <span className="font-bold">{t('introDescription')}</span>{" "}
       </motion.h1>
 
       <motion.div
@@ -80,11 +68,11 @@ export default function Intro() {
           href="#contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
           onClick={() => {
-            setActiveSection("Contacto");
+            setActiveSection("contact");
             setTimeOfLastClick(Date.now());
           }}
         >
-          Contáctame aquí{" "}
+          {t('introContactButton')}{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
@@ -93,7 +81,7 @@ export default function Intro() {
           href="/CV-fernando-kaganovicz.pdf"
           download
         >
-          Descarga CV{" "}
+          {t('introDownloadCV')}{" "}
           <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>
 

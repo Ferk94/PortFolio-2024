@@ -6,10 +6,18 @@ import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { useTranslation } from "react-i18next"; // importo hook para traducción
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
+
+  const { t } = useTranslation();
+  const translatedLinks = links.map((link) => ({
+    ...link,
+    name: link.name,
+    traduct: t(`header_${link.name}`),
+  }));
 
   return (
     <header className="z-[999] relative">
@@ -21,7 +29,7 @@ export default function Header() {
 
       <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
         <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.8rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5">
-          {links.map((link) => (
+          {translatedLinks.map((link) => (
             <motion.li
               className="h-3/4 flex items-center justify-center relative"
               key={link.hash}
@@ -42,7 +50,7 @@ export default function Header() {
                   setTimeOfLastClick(Date.now());
                 }}
               >
-                {link.name}
+                {link.traduct}
 
                 {link.name === activeSection && (
                   <motion.span

@@ -1,11 +1,20 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
-import { projectsData } from "@/lib/data";
+import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import { StaticImageData } from "next/image";
 
-type ProjectProps = (typeof projectsData)[number];
+type ProjectProps = {
+  title: string;
+  date: string;
+  description: string;
+  tags: string[];
+  imageUrl?: string | StaticImageData;
+  videoUrl?: string | null;
+  linkUrl?: string | null;
+  index: number;
+};
 
 export default function Project({
   title,
@@ -39,10 +48,10 @@ export default function Project({
         </div>
         <div className="mt-4">
           <ul className="flex flex-wrap gap-2">
-            {tags.map((tag, index) => (
+            {tags.map((tag, i) => (
               <li
                 className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                key={index}
+                key={i}
               >
                 {tag}
               </li>

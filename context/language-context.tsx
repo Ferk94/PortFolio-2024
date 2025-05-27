@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, createContext, useContext } from "react";
+import i18next from "i18next";
 
 type Language = "es" | "en";
 
@@ -21,24 +22,27 @@ export default function LanguageContextProvider({
   const [language, setLanguage] = useState<Language>("es");
 
   const toggleLanguage = () => {
-    if (language === "es") {
-      setLanguage("en");
-      window.localStorage.setItem("language", "en");
+    const newLang = language === "es" ? "en" : "es";
+    setLanguage(newLang);
+    window.localStorage.setItem("language", newLang);
+    i18next.changeLanguage(newLang); // <- CAMBIO NECESARIO
+    if (newLang === "en") {
       document.documentElement.classList.add("en");
     } else {
-      setLanguage("es");
-      window.localStorage.setItem("language", "es");
-      document.documentElement.classList.remove("es");
+      document.documentElement.classList.remove("en");
     }
   };
 
   useEffect(() => {
-      const localLanguage = window.localStorage.getItem("language") as Language | null;
-      if(localLanguage) setLanguage(localLanguage)
-      else {
-        setLanguage("es")
-        window.localStorage.setItem("language", "es");
-        document.documentElement.classList.remove("es");
+    const localLanguage = window.localStorage.getItem("language") as Language | null;
+    if (localLanguage) {
+      setLanguage(localLanguage);
+      i18next.changeLanguage(localLanguage); // <- SINCRONIZAR AL CARGAR
+    } else {
+      setLanguage("es");
+      window.localStorage.setItem("language", "es");
+      i18next.changeLanguage("es"); // <- IDIOMA POR DEFECTO
+      document.documentElement.classList.remove("en");
     }
   }, []);
 
@@ -56,11 +60,10 @@ export default function LanguageContextProvider({
 
 export function useLanguage() {
   const context = useContext(LanguageContext);
-  console.log(context, 'context')
 
-//   if (context === null) {
-//     throw new Error("useLanguage must be used within a LanguageContextProvider");
-//   }
+  if (context === null) {
+    throw new Error("useLanguage must be used within a LanguageContextProvider");
+  }
 
-  return {language: 'es', toggleLanguage: () => console.log('la')};
+  return context;
 }
