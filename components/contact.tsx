@@ -2,19 +2,20 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
+import { MotionSection } from "../lib/motionTypes";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next"; // importo hook para traducción
 
+
 export default function Contact() {
   const { ref } = useSectionInView("contact");
   const { t } = useTranslation(); // hook para traducción
 
   return (
-    <motion.section
+    <MotionSection
       id="contact"
       ref={ref}
       className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
@@ -67,6 +68,6 @@ export default function Contact() {
         />
         <SubmitBtn />
       </form>
-    </motion.section>
+    </MotionSection>
   );
 }

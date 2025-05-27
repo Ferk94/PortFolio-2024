@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
-import { motion } from "framer-motion";
+import { MotionDiv } from "../lib/motionTypes";
 import { StaticImageData } from "next/image";
 
 type ProjectProps = {
@@ -33,7 +33,7 @@ export default function Project({
   }, []);
 
   return (
-  <motion.div className="group mb-3 sm:mb-8 last:mb-0 w-[70%] mx-auto">
+  <MotionDiv className="group mb-3 sm:mb-8 last:mb-0 w-[70%] mx-auto">
   <section className="bg-gray-100 border border-black/5 rounded-lg overflow-hidden relative hover:bg-gray-200 transition dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
     <div className="flex flex-col sm:flex-row sm:h-[20rem]">
       
@@ -84,7 +84,7 @@ export default function Project({
       )}
     </div>
   </section>
-</motion.div>
+</MotionDiv>
 
   );
 }

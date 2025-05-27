@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion";
+import { MotionDiv, MotionH1 } from "../lib/motionTypes";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
@@ -26,7 +26,7 @@ export default function Intro() {
     >
       <div className="flex items-center justify-center">
         <div className="relative">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -43,20 +43,20 @@ export default function Intro() {
               priority={true}
               className="h-25 w-25 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
 
-      <motion.h1
+      <MotionH1
         className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold">{t('introGreeting', { name: 'Fernando' })}</span>{" "}
         <span className="font-bold">{t('introDescription')}</span>{" "}
-      </motion.h1>
+      </MotionH1>
 
-      <motion.div
+      <MotionDiv
         className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ export default function Intro() {
         >
           <FaGithubSquare />
         </a>
-      </motion.div>
+      </MotionDiv>
     </section>
   );
 }

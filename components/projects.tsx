@@ -27,7 +27,7 @@ export default function Projects() {
   title: t(`project_${project.title}`),
   date: project.date,
   description: t(`project_${project.description}`),
-  tags: [...project.tags], // ✅ aquí corregido
+  tags: [...project.tags], 
   videoUrl: project.videoUrl,
   imageUrl: project.imageUrl,
   linkUrl: project.linkUrl,
