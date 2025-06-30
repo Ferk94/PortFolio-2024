@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import Header from "@/components/header";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -12,6 +13,11 @@ import I18nProvider from "../translations/I18nProvider"; // ajusta ruta
 
 const inter = Inter({ subsets: ["latin"] });
 
+
+
+  
+
+
 export const metadata = {
   title: "Fernando Kaganovicz | Personal Portfolio",
   description: "con más de 4 años de experiencia en desarrollo full stack",
@@ -22,6 +28,45 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+const [chatOpen, setChatOpen] = useState(false);
+  useEffect(() => {
+    // Escuchar mensajes del iframe para abrir/cerrar el chat
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data === "openChat") setChatOpen(true);
+      if (event.data === "closeChat") setChatOpen(false);
+    };
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
+
+  // Estilos del iframe según el estado
+  const iframeStyle: React.CSSProperties = chatOpen
+    ? {
+        position: "fixed",
+        bottom: 24,
+        right: 24,
+        width: "20rem",   // Tailwind w-80 (320px)
+        height: "24rem",  // Tailwind h-96 (384px)
+        border: "none",
+        zIndex: 9999,
+        borderRadius: "12px",
+        boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
+        transition: "width 0.3s, height 0.3s",
+      }
+    : {
+        position: "fixed",
+        bottom: 24,
+        right: 24,
+        width: 24,
+        height: 24,
+        border: "none",
+        zIndex: 9999,
+        borderRadius: "50%",
+        boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
+        transition: "width 0.3s, height 0.3s",
+        overflow: "hidden",
+      };
+
   return (
     <html lang="en" className="!scroll-smooth">
       <head>
@@ -48,17 +93,7 @@ export default function RootLayout({
         </I18nProvider>
          <iframe
           src="https://chat-web-vert.vercel.app/chat"
-          style={{
-            position: "fixed",
-            bottom: "24px",
-            right: "24px",
-            width: "350px",
-            height: "500px",
-            border: "none",
-            zIndex: 9999,
-            borderRadius: "12px",
-            boxShadow: "0 4px 24px rgba(0,0,0,0.15)"
-          }}
+          style={iframeStyle}
           title="Chat"
         />
       </body>
