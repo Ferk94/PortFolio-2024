@@ -56,10 +56,10 @@ const [chatOpen, setChatOpen] = useState(false);
       }
     : {
         position: "fixed",
-        bottom: 24,
-        right: 24,
-        width: 24,
-        height: 24,
+        bottom: '24px',
+        right: '24px',
+        width: '24px',
+        height: '24px',
         border: "none",
         zIndex: 9999,
         borderRadius: "50%",
