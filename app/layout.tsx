@@ -46,6 +46,21 @@ export default function RootLayout({
           </ThemeContextProvider>
         </LanguageContextProvider>
         </I18nProvider>
+         <iframe
+          src="https://chat-3qrb4jswa-fernando-kaganoviczs-projects.vercel.app/chat"
+          style={{
+            position: "fixed",
+            bottom: "24px",
+            right: "24px",
+            width: "350px",
+            height: "500px",
+            border: "none",
+            zIndex: 9999,
+            borderRadius: "12px",
+            boxShadow: "0 4px 24px rgba(0,0,0,0.15)"
+          }}
+          title="Chat"
+        />
       </body>
     </html>
   );
