@@ -19,10 +19,10 @@ const inter = Inter({ subsets: ["latin"] });
   
 
 
-export const metadata = {
-  title: "Fernando Kaganovicz | Personal Portfolio",
-  description: "con más de 4 años de experiencia en desarrollo full stack",
-};
+// export const metadata = {
+//   title: "Fernando Kaganovicz | Personal Portfolio",
+//   description: "con más de 4 años de experiencia en desarrollo full stack",
+// };
 
 export default function RootLayout({
   children,
@@ -70,7 +70,7 @@ const [chatOpen, setChatOpen] = useState(false);
 
   return (
     <html lang="en" className="!scroll-smooth">
-      <head>
+      <head >
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body
