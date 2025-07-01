@@ -47,12 +47,12 @@ const [chatOpen, setChatOpen] = useState(false);
         position: "fixed",
         bottom: 24,
         right: 24,
-        width: "30rem",   // Tailwind w-80 (320px)
-        height: "30rem",  // Tailwind h-96 (384px)
+        width: "28rem",   // Tailwind w-80 (320px)
+        height: "28rem",  // Tailwind h-96 (384px)
         border: "none",
         zIndex: 9999,
         borderRadius: "12px",
-        boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
+        // boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
       }
     : {
         position: "fixed",
