@@ -33,6 +33,7 @@ const [chatOpen, setChatOpen] = useState(false);
   useEffect(() => {
     // Escuchar mensajes del iframe para abrir/cerrar el chat
     const handleMessage = (event: MessageEvent) => {
+      console.log(event, 'lalala')
       if (event.data === "openChat") setChatOpen(true);
       if (event.data === "closeChat") setChatOpen(false);
     };
@@ -46,25 +47,23 @@ const [chatOpen, setChatOpen] = useState(false);
         position: "fixed",
         bottom: 24,
         right: 24,
-        width: "20rem",   // Tailwind w-80 (320px)
-        height: "24rem",  // Tailwind h-96 (384px)
+        width: "30rem",   // Tailwind w-80 (320px)
+        height: "30rem",  // Tailwind h-96 (384px)
         border: "none",
         zIndex: 9999,
         borderRadius: "12px",
         boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
-        transition: "width 0.3s, height 0.3s",
       }
     : {
         position: "fixed",
-        bottom: '24px',
-        right: '24px',
-        width: '24px',
-        height: '24px',
+        bottom: '40px',
+        right: '30px',
+        width: '80px',
+        height: '80px',
         border: "none",
         zIndex: 9999,
         borderRadius: "50%",
-        boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
-        transition: "width 0.3s, height 0.3s",
+        // boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
         overflow: "hidden",
       };
 
