@@ -16,7 +16,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 
-  
+
 
 
 // export const metadata = {
@@ -29,7 +29,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-const [chatOpen, setChatOpen] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
   useEffect(() => {
     // Escuchar mensajes del iframe para abrir/cerrar el chat
     const handleMessage = (event: MessageEvent) => {
@@ -44,28 +44,28 @@ const [chatOpen, setChatOpen] = useState(false);
   // Estilos del iframe según el estado
   const iframeStyle: React.CSSProperties = chatOpen
     ? {
-        position: "fixed",
-        bottom: 24,
-        right: 24,
-        width: "28rem",   // Tailwind w-80 (320px)
-        height: "28rem",  // Tailwind h-96 (384px)
-        border: "none",
-        zIndex: 9999,
-        borderRadius: "12px",
-        // boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
-      }
+      position: "fixed",
+      bottom: 24,
+      right: 24,
+      width: "28rem",   // Tailwind w-80 (320px)
+      height: "28rem",  // Tailwind h-96 (384px)
+      border: "none",
+      zIndex: 9999,
+      borderRadius: "12px",
+      // boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
+    }
     : {
-        position: "fixed",
-        bottom: '40px',
-        right: '30px',
-        width: '80px',
-        height: '80px',
-        border: "none",
-        zIndex: 9999,
-        borderRadius: "50%",
-        // boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
-        overflow: "hidden",
-      };
+      position: "fixed",
+      bottom: '40px',
+      right: '30px',
+      width: '80px',
+      height: '80px',
+      border: "none",
+      zIndex: 9999,
+      borderRadius: "50%",
+      // boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
+      overflow: "hidden",
+    };
 
   return (
     <html lang="en" className="!scroll-smooth">
@@ -78,23 +78,28 @@ const [chatOpen, setChatOpen] = useState(false);
         <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
         <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
         <I18nProvider>
-        <LanguageContextProvider>
-          <ThemeContextProvider>
-            <ActiveSectionContextProvider>
-              <Header />
-              {children}
-              <Footer />
-              <Toaster position="top-right" />
-              <LanguageSwitch />
-              <ThemeSwitch />
-            </ActiveSectionContextProvider>
-          </ThemeContextProvider>
-        </LanguageContextProvider>
+          <LanguageContextProvider>
+            <ThemeContextProvider>
+              <ActiveSectionContextProvider>
+                <Header />
+                {children}
+                <Footer />
+                <Toaster position="top-right" />
+                <LanguageSwitch />
+                <ThemeSwitch />
+              </ActiveSectionContextProvider>
+            </ThemeContextProvider>
+          </LanguageContextProvider>
         </I18nProvider>
-         <iframe
+        <iframe
           src="https://chat-web-vert.vercel.app/chat"
           style={iframeStyle}
           title="Chat"
+          id="chatbot-iframe"
+          onLoad={() => {
+            const iframe = document.getElementById('chatbot-iframe') as HTMLIFrameElement;
+            iframe?.contentWindow?.postMessage({ type: 'init' }, '*');
+          }}
         />
       </body>
     </html>
