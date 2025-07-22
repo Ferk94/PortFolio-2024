@@ -32,7 +32,7 @@ export default function RootLayout({
   const [chatOpen, setChatOpen] = useState(false);
   useEffect(() => {
   const handleMessage = (event: MessageEvent) => {
-    console.log('PADRE recibió mensaje:', event.data);
+    // console.log('PADRE recibió mensaje:', event.data);
 
     if (event.data === "openChat") setChatOpen(true);
     if (event.data === "closeChat") setChatOpen(false);
