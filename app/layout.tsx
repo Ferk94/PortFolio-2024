@@ -31,15 +31,21 @@ export default function RootLayout({
 }) {
   const [chatOpen, setChatOpen] = useState(false);
   useEffect(() => {
-    // Escuchar mensajes del iframe para abrir/cerrar el chat
-    const handleMessage = (event: MessageEvent) => {
-      console.log(event, 'lalala')
-      if (event.data === "openChat") setChatOpen(true);
-      if (event.data === "closeChat") setChatOpen(false);
-    };
-    window.addEventListener("message", handleMessage);
-    return () => window.removeEventListener("message", handleMessage);
-  }, []);
+  const handleMessage = (event: MessageEvent) => {
+    console.log(event, 'lalala');
+
+    if (event.data === "openChat") setChatOpen(true);
+    if (event.data === "closeChat") setChatOpen(false);
+
+    if (event.data?.type === "ready") {
+      const iframe = document.getElementById("chatbot-iframe") as HTMLIFrameElement;
+      iframe?.contentWindow?.postMessage({ type: "init" }, "*");
+    }
+  };
+
+  window.addEventListener("message", handleMessage);
+  return () => window.removeEventListener("message", handleMessage);
+}, []);
 
   // Estilos del iframe según el estado
   const iframeStyle: React.CSSProperties = chatOpen
@@ -96,10 +102,6 @@ export default function RootLayout({
           style={iframeStyle}
           title="Chat"
           id="chatbot-iframe"
-          onLoad={() => {
-            const iframe = document.getElementById('chatbot-iframe') as HTMLIFrameElement;
-            iframe?.contentWindow?.postMessage({ type: 'init' }, '*');
-          }}
         />
       </body>
     </html>
