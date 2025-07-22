@@ -34,6 +34,8 @@ export default function RootLayout({
   const handleMessage = (event: MessageEvent) => {
     // console.log(event, 'lalala');
 
+    console.log(event.data, 'llega ready en algun momento??')
+
     if (event.data === "openChat") setChatOpen(true);
     if (event.data === "closeChat") setChatOpen(false);
 
