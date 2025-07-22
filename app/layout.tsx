@@ -32,14 +32,14 @@ export default function RootLayout({
   const [chatOpen, setChatOpen] = useState(false);
   useEffect(() => {
   const handleMessage = (event: MessageEvent) => {
-    console.log(event, 'lalala');
+    // console.log(event, 'lalala');
 
     if (event.data === "openChat") setChatOpen(true);
     if (event.data === "closeChat") setChatOpen(false);
 
-    if (event.data?.type === "ready") {
+    if (event.data === "ready") {
       const iframe = document.getElementById("chatbot-iframe") as HTMLIFrameElement;
-      iframe?.contentWindow?.postMessage({ type: "init" }, "*");
+      iframe?.contentWindow?.postMessage("init", "*");
     }
   };
 
