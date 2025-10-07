@@ -40,10 +40,11 @@ export default function RootLayout({
 
   const iframe = document.getElementById('chatbot-iframe') as HTMLIFrameElement | null;
 
-  iframe?.contentWindow?.postMessage(
-    { type: 'init', parentUrl: window.location.origin },
-    '*'
-  );
+   iframe?.contentWindow?.postMessage(
+        { type: 'init', organizationId: 30 },
+        'https://chat-web-weld.vercel.app'
+        // "http://localhost:5173"
+      );
 
   window.addEventListener("message", handleMessage);
   return () => window.removeEventListener("message", handleMessage);
@@ -100,7 +101,8 @@ export default function RootLayout({
           </LanguageContextProvider>
         </I18nProvider>
         <iframe
-          src="https://chat-web-vert.vercel.app/chat"
+          src="https://chat-web-weld.vercel.app/chat"
+          // src="http://localhost:5173/chat"
           style={iframeStyle}
           title="Chat"
           id="chatbot-iframe"
