@@ -14,11 +14,6 @@ import I18nProvider from "../translations/I18nProvider"; // ajusta ruta
 
 const inter = Inter({ subsets: ["latin"] });
 
-
-
-
-
-
 // export const metadata = {
 //   title: "Fernando Kaganovicz | Personal Portfolio",
 //   description: "con más de 4 años de experiencia en desarrollo full stack",
@@ -41,7 +36,7 @@ export default function RootLayout({
   const iframe = document.getElementById('chatbot-iframe') as HTMLIFrameElement | null;
 
    iframe?.contentWindow?.postMessage(
-        { type: 'init', organizationId: 30 },
+        { type: 'init', organizationId: 30, channelId: 77 },
         'https://chat-web-weld.vercel.app'
         // "http://localhost:5173"
       );
