@@ -36,8 +36,8 @@ export default function RootLayout({
   const iframe = document.getElementById('chatbot-iframe') as HTMLIFrameElement | null;
 
    iframe?.contentWindow?.postMessage(
-        { type: 'init', organizationId: 30, channelId: 77 },
-        'https://chat-web-weld.vercel.app'
+        { type: 'init', organizationId: 5, channelId: 225 },
+        'https://chat-widget.hivara.ai'
         // "http://localhost:5173"
       );
 
@@ -96,7 +96,7 @@ export default function RootLayout({
           </LanguageContextProvider>
         </I18nProvider>
         <iframe
-          src="https://chat-web-weld.vercel.app/chat"
+          src="https://chat-widget.hivara.ai/chat"
           // src="http://localhost:5173/chat"
           style={iframeStyle}
           title="Chat"
