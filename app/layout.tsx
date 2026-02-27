@@ -1,5 +1,6 @@
 'use client'
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "@/components/header";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -24,52 +25,52 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [chatOpen, setChatOpen] = useState(false);
-  useEffect(() => {
-  const handleMessage = (event: MessageEvent) => {
-    // console.log('PADRE recibió mensaje:', event.data);
+//   const [chatOpen, setChatOpen] = useState(false);
+//   useEffect(() => {
+//   const handleMessage = (event: MessageEvent) => {
+//     // console.log('PADRE recibió mensaje:', event.data);
 
-    if (event.data === "openChat") setChatOpen(true);
-    if (event.data === "closeChat") setChatOpen(false);
-  };
+//     if (event.data === "openChat") setChatOpen(true);
+//     if (event.data === "closeChat") setChatOpen(false);
+//   };
 
-  const iframe = document.getElementById('chatbot-iframe') as HTMLIFrameElement | null;
+//   const iframe = document.getElementById('chatbot-iframe') as HTMLIFrameElement | null;
 
-   iframe?.contentWindow?.postMessage(
-        { type: 'init', organizationId: 5, channelId: 225 },
-        'https://chat-widget.hivara.ai'
-        // "http://localhost:5173"
-      );
+//    iframe?.contentWindow?.postMessage(
+//         { type: 'init', organizationId: 1, channelId: 1 },
+//         // 'https://chat-widget.hivara.ai'
+//         "http://localhost:5173"
+//       );
 
-  window.addEventListener("message", handleMessage);
-  return () => window.removeEventListener("message", handleMessage);
-}, []);
+//   window.addEventListener("message", handleMessage);
+//   return () => window.removeEventListener("message", handleMessage);
+// }, []);
 
   // Estilos del iframe según el estado
-  const iframeStyle: React.CSSProperties = chatOpen
-    ? {
-      position: "fixed",
-      bottom: 24,
-      right: 24,
-      width: "28rem",   // Tailwind w-80 (320px)
-      height: "28rem",  // Tailwind h-96 (384px)
-      border: "none",
-      zIndex: 9999,
-      borderRadius: "12px",
-      // boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
-    }
-    : {
-      position: "fixed",
-      bottom: '40px',
-      right: '30px',
-      width: '80px',
-      height: '80px',
-      border: "none",
-      zIndex: 9999,
-      borderRadius: "50%",
-      // boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
-      overflow: "hidden",
-    };
+  // const iframeStyle: React.CSSProperties = chatOpen
+  //   ? {
+  //     position: "fixed",
+  //     bottom: 24,
+  //     right: 24,
+  //     width: "28rem",   // Tailwind w-80 (320px)
+  //     height: "28rem",  // Tailwind h-96 (384px)
+  //     border: "none",
+  //     zIndex: 9999,
+  //     borderRadius: "12px",
+  //     // boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
+  //   }
+  //   : {
+  //     position: "fixed",
+  //     bottom: '40px',
+  //     right: '30px',
+  //     width: '80px',
+  //     height: '80px',
+  //     border: "none",
+  //     zIndex: 9999,
+  //     borderRadius: "50%",
+  //     // boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
+  //     overflow: "hidden",
+  //   };
 
   return (
     <html lang="en" className="!scroll-smooth">
@@ -95,13 +96,13 @@ export default function RootLayout({
             </ThemeContextProvider>
           </LanguageContextProvider>
         </I18nProvider>
-        <iframe
+       { /* <iframe
           src="https://chat-widget.hivara.ai/chat"
           // src="http://localhost:5173/chat"
           style={iframeStyle}
           title="Chat"
           id="chatbot-iframe"
-        />
+        /> */}
       </body>
     </html>
   );
