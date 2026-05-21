@@ -1,6 +1,5 @@
 'use client'
-// import React, { useEffect, useState } from "react";
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "@/components/header";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -25,6 +24,40 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+  useEffect(() => {
+    // 1. Creamos el elemento script
+    const script = document.createElement('script');
+    
+    // 2. Configuramos el ID y la fuente del bundle
+    script.id = "beast-webchat-embed";
+    script.src = "https://chat-widget-static.hivara.ai/embed.js";
+    script.async = true;
+    
+    // 3. Añadimos los data-attributes de configuración
+    script.setAttribute('data-api-url', 'https://chat-widget.hivara.ai');
+    script.setAttribute('data-org-id', '30');
+    script.setAttribute('data-channel-id', '77');
+    script.setAttribute('data-platform-name', 'Platense');
+    script.setAttribute('data-theme', 'dark');
+    script.setAttribute('data-debug', 'true');
+    script.setAttribute('data-niche', 'Gaming');
+    script.setAttribute('data-welcome-message', 'Hola, inicia sesión aquí');
+    script.setAttribute('data-first-message', 'Bienvenidos a platense! ¿Cómo puedo ayudarte?');
+    script.setAttribute('data-icon-url', '');
+
+    // 4. Inyectamos el script en el documento
+    document.body.appendChild(script);
+
+    // Opcional: Limpieza al desmontar el componente
+    return () => {
+      const existingScript = document.getElementById('beast-webchat-embed');
+      if (existingScript) {
+        existingScript.remove();
+      }
+      // También podrías querer eliminar el contenedor del chat si el script lo genera fuera del árbol de React
+    };
+  }, []);
 //   const [chatOpen, setChatOpen] = useState(false);
 //   useEffect(() => {
 //   const handleMessage = (event: MessageEvent) => {
