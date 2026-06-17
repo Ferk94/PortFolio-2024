@@ -36,8 +36,8 @@ export default function RootLayout({
     
     // 3. Añadimos los data-attributes de configuración
     script.setAttribute('data-api-url', 'https://chat-widget.hivara.ai');
-    script.setAttribute('data-org-id', '5');
-    script.setAttribute('data-channel-id', '245');
+    script.setAttribute('data-org-id', '30');
+    script.setAttribute('data-channel-id', '77');
     script.setAttribute('data-platform-name', 'Platense');
     script.setAttribute('data-theme', 'dark');
     script.setAttribute('data-debug', 'true');
