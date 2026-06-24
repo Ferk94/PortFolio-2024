@@ -41,7 +41,8 @@ export default function RootLayout({
     script.setAttribute('data-platform-name', 'Platense');
     script.setAttribute('data-theme', 'dark');
     script.setAttribute('data-debug', 'true');
-    script.setAttribute('data-niche', 'Gaming');
+    script.setAttribute('data-niche', 'marketing');
+    script.setAttribute('data-chat-open', 'true')
     script.setAttribute('data-welcome-message', 'Hola, inicia sesión aquí');
     script.setAttribute('data-first-message', 'Bienvenidos a platense! ¿Cómo puedo ayudarte?');
     script.setAttribute('data-icon-url', '');
