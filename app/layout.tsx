@@ -31,7 +31,7 @@ export default function RootLayout({
     
     // 2. Configuramos el ID y la fuente del bundle
     script.id = "beast-webchat-embed";
-    script.src = "hhttps://chat-widget-preprod.agentes-ia.net/embed.js";
+    script.src = "https://chat-widget-preprod.agentes-ia.net/embed.js";
     script.async = true;
     
     // 3. Añadimos los data-attributes de configuración
