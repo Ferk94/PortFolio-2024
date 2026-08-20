@@ -37,15 +37,19 @@ export default function RootLayout({
     // 3. Añadimos los data-attributes de configuración
     script.setAttribute('data-api-url', 'https://chat-widget-preprod.agentes-ia.net');
     script.setAttribute('data-org-id', '30');
-    script.setAttribute('data-channel-id', '77');
+    script.setAttribute('data-channel-id', '161');
     script.setAttribute('data-platform-name', 'Platense');
     script.setAttribute('data-theme', 'dark');
     script.setAttribute('data-debug', 'true');
-    script.setAttribute('data-niche', 'marketing');
+    script.setAttribute('data-niche', 'gaming');
     script.setAttribute('data-chat-open', 'true')
     script.setAttribute('data-welcome-message', 'Hola, inicia sesión aquí!!!');
     script.setAttribute('data-first-message', 'Bienvenidos a platense! ¿Cómo puedo ayudarte?');
     script.setAttribute('data-icon-url', '');
+    script.setAttribute('data-pwa-url', 'http://test.appjugando.com/platense');
+    script.setAttribute('data-host-auth-enabled', 'true');
+    script.setAttribute('data-gift-url', 'https://promociones.com');
+    script.setAttribute('data-brand-theme', 'hivara');
 
     // 4. Inyectamos el script en el documento
     document.body.appendChild(script);
@@ -59,52 +63,6 @@ export default function RootLayout({
       // También podrías querer eliminar el contenedor del chat si el script lo genera fuera del árbol de React
     };
   }, []);
-//   const [chatOpen, setChatOpen] = useState(false);
-//   useEffect(() => {
-//   const handleMessage = (event: MessageEvent) => {
-//     // console.log('PADRE recibió mensaje:', event.data);
-
-//     if (event.data === "openChat") setChatOpen(true);
-//     if (event.data === "closeChat") setChatOpen(false);
-//   };
-
-//   const iframe = document.getElementById('chatbot-iframe') as HTMLIFrameElement | null;
-
-//    iframe?.contentWindow?.postMessage(
-//         { type: 'init', organizationId: 1, channelId: 1 },
-//         // 'https://chat-widget.hivara.ai'
-//         "http://localhost:5173"
-//       );
-
-//   window.addEventListener("message", handleMessage);
-//   return () => window.removeEventListener("message", handleMessage);
-// }, []);
-
-  // Estilos del iframe según el estado
-  // const iframeStyle: React.CSSProperties = chatOpen
-  //   ? {
-  //     position: "fixed",
-  //     bottom: 24,
-  //     right: 24,
-  //     width: "28rem",   // Tailwind w-80 (320px)
-  //     height: "28rem",  // Tailwind h-96 (384px)
-  //     border: "none",
-  //     zIndex: 9999,
-  //     borderRadius: "12px",
-  //     // boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
-  //   }
-  //   : {
-  //     position: "fixed",
-  //     bottom: '40px',
-  //     right: '30px',
-  //     width: '80px',
-  //     height: '80px',
-  //     border: "none",
-  //     zIndex: 9999,
-  //     borderRadius: "50%",
-  //     // boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
-  //     overflow: "hidden",
-  //   };
 
   return (
     <html lang="en" className="!scroll-smooth">
