@@ -42,7 +42,7 @@ export default function RootLayout({
     script.setAttribute('data-theme', 'dark');
     script.setAttribute('data-debug', 'true');
     script.setAttribute('data-niche', 'gaming');
-    script.setAttribute('data-chat-open', 'true')
+    script.setAttribute('data-chat-open', 'false')
     script.setAttribute('data-welcome-message', 'Hola, inicia sesión aquí!!!');
     script.setAttribute('data-first-message', 'Bienvenidos a Calamar! ¿Cómo puedo ayudarte?');
     script.setAttribute('data-icon-url', '');
