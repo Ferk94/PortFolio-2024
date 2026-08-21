@@ -46,10 +46,10 @@ export default function RootLayout({
     script.setAttribute('data-welcome-message', 'Hola, inicia sesión aquí!!!');
     script.setAttribute('data-first-message', 'Bienvenidos a Calamar! ¿Cómo puedo ayudarte?');
     script.setAttribute('data-icon-url', '');
-    script.setAttribute('data-pwa-url', 'http://test.appjugando.com/platense');
-    script.setAttribute('data-host-auth-enabled', 'true');
-    script.setAttribute('data-gift-url', 'https://promociones.com');
-    script.setAttribute('data-brand-theme', 'hivara');
+    // script.setAttribute('data-pwa-url', 'http://test.appjugando.com/platense');
+    // script.setAttribute('data-host-auth-enabled', 'true');
+    // script.setAttribute('data-gift-url', 'https://promociones.com');
+    // script.setAttribute('data-brand-theme', 'hivara');
 
     // 4. Inyectamos el script en el documento
     document.body.appendChild(script);
