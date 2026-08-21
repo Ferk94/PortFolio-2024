@@ -31,20 +31,20 @@ export default function RootLayout({
     
     // 2. Configuramos el ID y la fuente del bundle
     script.id = "beast-webchat-embed";
-    script.src = "https://chat-widget-preprod.agentes-ia.net/embed.js";
+    script.src = "https://chat-widget.hivara.ai/embed.js";
     script.async = true;
     
     // 3. Añadimos los data-attributes de configuración
-    script.setAttribute('data-api-url', 'https://chat-widget-preprod.agentes-ia.net');
-    script.setAttribute('data-org-id', '30');
-    script.setAttribute('data-channel-id', '161');
-    script.setAttribute('data-platform-name', 'Platense');
+    script.setAttribute('data-api-url', 'https://chat-widget.hivara.ai');
+    script.setAttribute('data-org-id', '5');
+    script.setAttribute('data-channel-id', '245');
+    script.setAttribute('data-platform-name', 'Calamar');
     script.setAttribute('data-theme', 'dark');
     script.setAttribute('data-debug', 'true');
     script.setAttribute('data-niche', 'gaming');
     script.setAttribute('data-chat-open', 'true')
     script.setAttribute('data-welcome-message', 'Hola, inicia sesión aquí!!!');
-    script.setAttribute('data-first-message', 'Bienvenidos a platense! ¿Cómo puedo ayudarte?');
+    script.setAttribute('data-first-message', 'Bienvenidos a Calamar! ¿Cómo puedo ayudarte?');
     script.setAttribute('data-icon-url', '');
     script.setAttribute('data-pwa-url', 'http://test.appjugando.com/platense');
     script.setAttribute('data-host-auth-enabled', 'true');
