@@ -48,7 +48,7 @@ export default function RootLayout({
     script.setAttribute('data-icon-url', '');
     script.setAttribute('data-pwa-url', 'http://test.appjugando.com/platense');
     script.setAttribute('data-host-auth-enabled', 'true');
-    // script.setAttribute('data-gift-url', 'https://promociones.com');
+    script.setAttribute('data-gift-url', 'https://promociones.com');
     script.setAttribute('data-brand-theme', 'prime');
     script.setAttribute('data-embed-version', 'v1.0.4');
 
