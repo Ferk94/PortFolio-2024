@@ -50,7 +50,7 @@ export default function RootLayout({
     script.setAttribute('data-host-auth-enabled', 'true');
     // script.setAttribute('data-gift-url', 'https://promociones.com');
     script.setAttribute('data-brand-theme', 'prime');
-    script.setAttribute('data-embed-version', 'v1.0.5');
+    script.setAttribute('data-embed-version', 'v1.0.4');
 
     // 4. Inyectamos el script en el documento
     document.body.appendChild(script);
