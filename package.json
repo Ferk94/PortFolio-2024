@@ -8,10 +8,13 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": {
+  "node": ">=24.0.0"
+  },
   "dependencies": {
     "@react-email/components": "^0.0.7",
     "@react-email/tailwind": "^0.0.8",
-    "@types/node": "20.3.2",
+    "@types/node": "24.0.0",
     "autoprefixer": "10.4.14",
     "clsx": "^1.2.1",
     "eslint": "8.43.0",

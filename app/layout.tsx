@@ -31,11 +31,11 @@ export default function RootLayout({
     
     // 2. Configuramos el ID y la fuente del bundle
     script.id = "beast-webchat-embed";
-    script.src = "https://chat-widget-static.hivara.ai/embed.js";
+    script.src = "https://chat-widget-static.gestionamos.io/embed.js";
     script.async = true;
     
     // 3. Añadimos los data-attributes de configuración
-    script.setAttribute('data-api-url', 'https://chat-widget.hivara.ai');
+    script.setAttribute('data-api-url', 'https://chat-widget.gestionamos.io');
     script.setAttribute('data-org-id', '5');
     script.setAttribute('data-channel-id', '245');
     script.setAttribute('data-platform-name', 'Calamar');
